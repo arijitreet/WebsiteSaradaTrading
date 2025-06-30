@@ -163,9 +163,79 @@
             text-shadow: 1px 1px 6px #000;
         }
         @media (max-width: 700px) {
-            .hero h2 { font-size: 1.4rem; }
-            .section-title { font-size: 1.3rem; }
-            section { padding: 30px 8px; }
+            .hero h2 { font-size: 1.2rem; }
+            .section-title { font-size: 1.1rem; }
+            section { padding: 18px 4px; }
+            header {
+                min-height: 120px;
+                padding-bottom: 12px;
+            }
+            header h1 {
+                font-size: 1.3rem;
+                margin-top: 70px;
+            }
+            header img[alt="Sarada Trading Logo"] {
+                height: 48px !important;
+                top: 8px !important;
+                left: 50% !important;
+                transform: translateX(-50%);
+            }
+            .hero {
+                min-height: 40vh;
+                border-radius: 10px;
+                margin-bottom: 18px;
+                padding: 10px 0;
+            }
+            .hero-content {
+                padding: 0 2px;
+            }
+            .hero p {
+                font-size: 0.98rem;
+            }
+            .about, #contact, .about-me {
+                border-radius: 10px;
+                padding: 18px 4px !important;
+                margin-top: 18px !important;
+            }
+            .about h2, .about h3, #contact h2, .about-me h2 {
+                font-size: 1.1rem !important;
+            }
+            .module h3 {
+                font-size: 1rem;
+            }
+            .module ul, .about ul, .about li {
+                font-size: 0.95rem;
+            }
+            /* Social icons responsive */
+            header div[style*="position: absolute;"] {
+                position: static !important;
+                display: flex !important;
+                justify-content: center !important;
+                margin: 0 auto 8px auto !important;
+                background: rgba(255,255,255,0.95) !important;
+                border-radius: 18px !important;
+                padding: 2px 6px !important;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.10) !important;
+                gap: 10px !important;
+                width: fit-content !important;
+                top: unset !important;
+                right: unset !important;
+            }
+            header nav {
+                flex-direction: column;
+                gap: 8px;
+                margin-top: 8px;
+            }
+            footer div[style*="display: flex;"] {
+                flex-wrap: wrap;
+                gap: 10px !important;
+                padding: 2px 6px !important;
+                border-radius: 18px !important;
+            }
+            img[alt="Instagram"], img[alt="X"], img[alt="YouTube"], img[alt="WhatsApp"] {
+                height: 24px !important;
+                width: 24px !important;
+            }
         }
     </style>
 </head>
