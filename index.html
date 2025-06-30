@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Tournament</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: url('https://png.pngtree.com/thumb_back/fh260/background/20230527/pngtree-green-glowing-graph-of-a-growing-stock-market-image_2651127.jpg') center/cover no-repeat fixed;
+            color: #fff;
+        }
+        header {
+            background: none;
+            text-align: center;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 0;
+        }
+        header, header * {
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 2px 2px 8px #000, 0 0 10px #00e676;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 900;
+        }
+        nav {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+            text-shadow: 1px 1px 6px #000, 0 0 6px #00e676;
+        }
+        nav a:hover {
+            color: #00e676;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            background: none;
+            position: relative;
+            border-top:4px solid #00e676;
+            border-bottom:4px solid #00e676;
+            margin-bottom:40px;
+            background:rgba(0,0,0,0.7);
+            border-radius:16px;
+            box-shadow:0 2px 16px rgba(0,0,0,0.2);
+        }
+        .hero::after {
+            content: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .hero h2, .hero p {
+            color: #fff;
+            text-shadow: 2px 2px 8px #000, 0 0 10px #00e676;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+        .hero button {
+            background: #ff9800;
+            color: #fff;
+            border: none;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .hero button:hover {
+            background: #e65100;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .about {
+            background: rgba(0,0,0,0.7);
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+            color: #fff;
+        }
+        .about h2, .about h3 {
+            color: #00e676;
+            text-shadow: 2px 2px 8px #000, 0 0 8px #222;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 800;
+        }
+        .about ul, .about li {
+            color: #fff;
+            font-size: 1.08rem;
+            text-shadow: 1px 1px 6px #000;
+        }
+        footer {
+            background: none;
+            color: #aaa;
+            text-align: center;
+            padding: 18px 0;
+            margin-top: 40px;
+        }
+        #contact {
+            background: rgba(0,0,0,0.7);
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+            color: #fff;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+        #contact h2 {
+            color: #00e676;
+            text-shadow: 2px 2px 8px #000, 0 0 8px #222;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 800;
+        }
+        #contact p, #contact a {
+            color: #fff;
+            font-size: 1.08rem;
+            text-shadow: 1px 1px 6px #000;
+        }
+        @media (max-width: 700px) {
+            .hero h2 { font-size: 1.4rem; }
+            .section-title { font-size: 1.3rem; }
+            section { padding: 30px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header style="position: relative; border-top:4px solid #00e676; border-bottom:4px solid #00e676; margin-bottom:40px;">
+        <img src="SaradaTradingLogo.png" alt="Sarada Trading Logo" style="position: absolute; top: 10px; left: 18px; height: 80px; width: auto; z-index: 2; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.18);">
+        <!-- Social Icons Top Right -->
+        <div style="position: absolute; top: 18px; right: 24px; display: flex; gap: 18px; z-index: 3; background:rgba(255,255,255,0.85); border-radius:24px; padding:4px 12px; box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+            <a href="https://www.instagram.com/arijit.here/" target="_blank" rel="noopener" title="Instagram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="height:32px;width:32px;display:block;">
+            </a>
+            <a href="https://x.com/arijitreet" target="_blank" rel="noopener" title="X (Twitter)">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" style="height:32px;width:32px;display:block;">
+            </a>
+            <a href="https://www.youtube.com/arijitpandareet" target="_blank" rel="noopener" title="YouTube">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" style="height:32px;width:32px;display:block;">
+            </a>
+            <a href="https://wa.me/9776327815" target="_blank" rel="noopener" title="WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="height:32px;width:32px;display:block;">
+            </a>
+        </div>
+        <h1>SARADA TRADING</h1>
+        <nav>
+            <a href="#about">Course Details</a>
+            <a href="#contact">Contact us</a>
+            <a href="#about-me">About Me</a>
+        </nav>
+    </header>
+    <section class="hero" style="border-top:4px solid #00e676; border-bottom:4px solid #00e676; margin-bottom:40px; background:rgba(0,0,0,0.7); border-radius:16px; box-shadow:0 2px 16px rgba(0,0,0,0.2);">
+        <div class="hero-content">
+            <h2 style="color:#00e676; text-shadow:2px 2px 8px #000, 0 0 8px #222; font-family:'Montserrat', Arial, sans-serif; font-weight:800; margin-bottom:60px;">Welcome to SARADA TRADING</h2>
+            <p style="margin-top:0;">The Sarada Trading Course is a comprehensive, step-by-step stock market training program designed for beginners as well as aspiring traders and investors who want to build a strong foundation and grow their wealth systematically.
+                Led by Arijit Panda, a professional trader and investor with years of real market experience, this course provides not just theoretical knowledge, but also practical insights, live examples, and proven strategies that actually work in the Indian stock market.</p>
+            <p style="margin-top:32px; font-size:1.13rem; font-weight:600; text-shadow:1px 1px 6px #000;">
+                Open this link to join my free WhatsApp analysis Community: <a href="https://chat.whatsapp.com/J3c4pHw3rnSLoK0VW2uwIy?mode=r_t" target="_blank" style="color:#25D366; font-weight:bold; text-decoration:underline;">https://chat.whatsapp.com/J3c4pHw3rnSLoK0VW2uwIy?mode=r_t</a>
+            </p>
+        </div>
+    </section>
+   
+    <section id="about" class="about">
+         <h2 class="section-title" style="text-align:center; color:#00e676; text-shadow:2px 2px 8px #000, 0 0 8px #222; font-family:'Montserrat', Arial, sans-serif; font-weight:800; margin-bottom:18px;">Course Contents</h2>
+
+  <div class="module">
+    <h3>✅ Module 1: Introduction to Stock Market</h3>
+    <ul>
+      <li>What is the stock market?</li>
+      <li>History and evolution of Indian stock markets</li>
+      <li>How the market works – NSE, BSE, SEBI, indices, etc.</li>
+      <li>Demat and Trading Accounts – Opening and operations</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>✅ Module 2: Fundamental Analysis</h3>
+    <ul>
+      <li>Understanding company financials (P&amp;L, Balance Sheet, Cash Flow)</li>
+      <li>Ratios: PE, ROE, Debt-to-Equity, etc.</li>
+      <li>How to read Annual Reports</li>
+      <li>Sector analysis and picking quality stocks</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>✅ Module 3: Technical Analysis</h3>
+    <ul>
+      <li>Charts and Patterns</li>
+      <li>Candlestick basics</li>
+      <li>Key Indicators: RSI, MACD, Moving Averages, Bollinger Bands</li>
+      <li>Support &amp; Resistance, Trendlines</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>✅ Module 4: Trading Psychology &amp; Risk Management</h3>
+    <ul>
+      <li>Controlling emotions while trading</li>
+      <li>Developing the right trader mindset</li>
+      <li>Position sizing and capital protection</li>
+      <li>Avoiding common mistakes</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>✅ Module 5: Intraday &amp; Swing Trading Strategies</h3>
+    <ul>
+      <li>Proven setups used by professionals</li>
+      <li>Entry, Exit &amp; Stop-loss techniques</li>
+      <li>Live market case studies</li>
+      <li>Tools &amp; platforms used by active traders</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>✅ Module 6: Investing for Long-Term Wealth</h3>
+    <ul>
+      <li>Value investing vs growth investing</li>
+      <li>Building a long-term portfolio</li>
+      <li>Compounding strategies</li>
+      <li>SIPs, Mutual Funds &amp; diversification</li>
+    </ul>
+  </div>
+
+  <div class="module">
+    <h3>✅ Module 7: Futures, Options &amp; Derivatives (Basics)</h3>
+    <ul>
+      <li>Understanding derivatives</li>
+      <li>When to use Options and Futures</li>
+      <li>Hedging vs Speculation</li>
+      <li>Simple option strategies</li>
+    </ul>
+  </div>
+</section>
+    <section id="contact" style="margin-bottom:40px; border-top:4px solid #00e676; border-bottom:4px solid #00e676; margin-top:40px;">
+        <h2 class="section-title">Contact Us</h2>
+        <p>If you have any questions or need more information, feel free to reach out to us:</p>
+        <p>Whatsapp: <a href="https://wa.me/9776327815" target="_blank" style="color:#25D366; font-weight:bold; text-shadow:1px 1px 6px #000;">https://wa.me/9776327815</a></p>
+        <p>Email: <a href="mailto:saradatradinginstitute@gmail.com" style="color:#25D366; font-weight:bold; text-shadow:1px 1px 6px #000;">saradatradinginstitute@gmail.com</a></p>
+    </section>
+    <section id="about-me" class="about-me" style="background:rgba(0,0,0,0.7); border-radius:16px; box-shadow:0 2px 16px rgba(0,0,0,0.2); color:#fff; margin-bottom:40px; padding:40px 20px; margin-top:40px; border-top:4px solid #00e676; border-bottom:4px solid #00e676;">
+        <h2 class="section-title" style="color:#00e676; text-shadow:2px 2px 8px #000, 0 0 8px #222; font-family:'Montserrat', Arial, sans-serif; font-weight:800;">About Me</h2>
+        <p style="font-size:1.13rem; line-height:1.7; text-shadow:1px 1px 6px #000; font-weight:500;">
+            Hi, I’m Arijit Panda — a passionate trader and software developer originally from Odisha, now based in Bangalore. I hold a B.Tech degree and currently work at a multinational company as a software developer. Outside the 9-to-5, my real passion lies in the stock market, where I bring 4+ years of hands-on trading experience and 2+ years of mentoring individuals in understanding market dynamics.<br><br>
+            My trading style is centered on high-risk, high-reward strategies, with a strong focus on momentum and trend-based analysis. I primarily trade in Nifty 50 derivatives and also actively engage in stock swing trading. I specialize in identifying short- to medium-term opportunities that align with market momentum and technical patterns.<br><br>
+            What sets me apart is transparency—I’ve consistently shared my personal journey, PNL updates, and honest market insights with my community on X (formerly Twitter). My mission is to simplify trading, eliminate hype, and provide actionable knowledge to help people build confidence in the markets.<br><br>
+            If you’re passionate about learning stock trading, mutual funds, F&O, or just want real, no-nonsense market content—you’re in the right place. Let’s grow and trade smart, together.
+        </p>
+    </section>
+    <footer>
+        <!-- Social Icons Above Footer -->
+        <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 18px; background:rgba(255,255,255,0.85); border-radius:24px; padding:4px 12px; box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+            <a href="https://www.instagram.com/arijit.here/" target="_blank" rel="noopener" title="Instagram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="height:32px;width:32px;display:block;">
+            </a>
+            <a href="https://x.com/arijitreet" target="_blank" rel="noopener" title="X (Twitter)">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X" style="height:32px;width:32px;display:block;">
+            </a>
+            <a href="https://www.youtube.com/arijitpandareet" target="_blank" rel="noopener" title="YouTube">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" style="height:32px;width:32px;display:block;">
+            </a>
+            <a href="https://wa.me/9776327815" target="_blank" rel="noopener" title="WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="height:32px;width:32px;display:block;">
+            </a>
+        </div>
+        &copy; Sarada Trading. All rights reserved.
+    </footer>
+</body>
+</html>
