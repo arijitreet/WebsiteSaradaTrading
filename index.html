@@ -55,6 +55,15 @@
             <p class="card-paragraph" style="margin-top:32px; font-size:1.13rem; font-weight:600;">Open this link to join my free WhatsApp analysis Community: <a href="http://bit.ly/wp97763" target="_blank" style="color:#25D366; font-weight:bold; text-decoration:underline;">http://bit.ly/wp97763</a></p>
         </div>
     </section>
+    <!-- Countdown Section for Next Batch -->
+    <section id="next-batch" class="next-batch-section">
+      <div class="next-batch-message">Next Stock market batch starting on <span class="next-batch-date">July 12</span></div>
+      <div id="countdown-timer" class="countdown-timer"></div>
+      <div class="next-batch-btns">
+        <a href="http://bit.ly/wp97763" target="_blank" class="next-batch-btn">Join next batch</a>
+        <a href="http://bit.ly/wp97763" target="_blank" class="next-batch-btn alt">Inquire about next batch</a>
+      </div>
+    </section>
     <section id="about" class="about">
          <h2 class="section-title">Course Contents</h2>
   <div class="module">
@@ -267,6 +276,31 @@
           aiMsgPopupOpen = false;
         }
       });
+      // Countdown Timer Logic
+      function updateCountdown() {
+        const countdown = document.getElementById('countdown-timer');
+        const target = new Date('2025-07-12T15:00:00+05:30'); // July 12, 2025, 3PM IST
+        const now = new Date();
+        let diff = target - now;
+        if (diff < 0) {
+          countdown.innerHTML = '<span class="countdown-over">Batch Started!</span>';
+          return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        diff -= days * (1000 * 60 * 60 * 24);
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        diff -= hours * (1000 * 60 * 60);
+        const mins = Math.floor(diff / (1000 * 60));
+        diff -= mins * (1000 * 60);
+        const secs = Math.floor(diff / 1000);
+        countdown.innerHTML =
+          `<span class="countdown-box">${days}<span>d</span></span>` +
+          `<span class="countdown-box">${hours}<span>h</span></span>` +
+          `<span class="countdown-box">${mins}<span>m</span></span>` +
+          `<span class="countdown-box">${secs}<span>s</span></span>`;
+      }
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
     </script>
 </body>
 </html>
