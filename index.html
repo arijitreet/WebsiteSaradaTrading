@@ -27,6 +27,7 @@
         </div>
         <h1>SARADA TRADING</h1>
         <nav>
+            <a href="#enroll" onclick="event.preventDefault();document.getElementById('next-batch').scrollIntoView({behavior: 'smooth'});">Enroll Now</a>
             <a href="#about">Course Details</a>
             <a href="#contact">Contact us</a>
             <a href="#about-me">About Me</a>
@@ -56,6 +57,8 @@
         </div>
     </section>
     <!-- Countdown Section for Next Batch -->
+    <!-- Floating Last Two Slots Left Message -->
+    <div class="floating-slots-message">⏳ Last <b>2 slots</b> <span class="slots-black">left for the next batch! Hurry up!</span></div>
     <section id="next-batch" class="next-batch-section">
       <div class="next-batch-message">Next Stock market batch starting on <span class="next-batch-date">July 12</span></div>
       <div id="countdown-timer" class="countdown-timer"></div>
@@ -64,6 +67,7 @@
         <a href="http://bit.ly/wp97763" target="_blank" class="next-batch-btn alt">Inquire about next batch</a>
       </div>
     </section>
+    <!-- Join Next Batch Button (scrolls to countdown) -->
     <section id="about" class="about">
          <h2 class="section-title">Course Contents</h2>
   <div class="module">
@@ -301,6 +305,12 @@
       }
       setInterval(updateCountdown, 1000);
       updateCountdown();
+      // Button shake logic
+      const btnsContainer = document.querySelector('.next-batch-btns');
+      setInterval(() => {
+        btnsContainer.classList.add('shake-active');
+        setTimeout(() => btnsContainer.classList.remove('shake-active'), 500);
+      }, 1500);
     </script>
 </body>
 </html>
