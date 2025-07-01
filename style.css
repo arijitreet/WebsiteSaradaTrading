@@ -447,12 +447,23 @@ nav a:hover::after, nav a:focus::after {
         padding-bottom: 8px;
     }
     .header-logo {
-        height: 60px !important;
-        left: 12px !important;
+        height: 44px !important;
+        left: 8px !important;
         top: 8px !important;
-        transform: none !important;
-        max-width: 90vw;
+        max-width: 60vw !important;
         position: absolute !important;
+        z-index: 2 !important;
+    }
+    header h1 {
+        font-size: 1.15rem !important;
+        margin-top: 54px !important;
+        margin-bottom: 0 !important;
+        line-height: 1.2 !important;
+        position: relative !important;
+        z-index: 1 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        word-break: break-word !important;
     }
     .social-icons-bar {
         position: static !important;
