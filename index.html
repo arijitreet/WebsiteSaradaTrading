@@ -120,6 +120,83 @@
       <li>Simple option strategies</li>
     </ul>
   </div>
+  <div class="module">
+    <h3>✅ Extra Concepts & Practical Topics</h3>
+    <div class="modules-grid">
+      <div class="module">
+        <h3>📈 Basics & Market Structure</h3>
+        <ul>
+          <li>What is stock market?</li>
+          <li>What is Stock?</li>
+          <li>How stock gets listed?</li>
+          <li><b class="highlight-ipo">IPO Basics</b></li>
+          <li>Indian Market vs US market</li>
+          <li>How Stocks contribute to Indian economy?</li>
+          <li>What is Nifty 50?</li>
+        </ul>
+      </div>
+      <div class="module">
+        <h3>🧑‍💼 Types & Psychology</h3>
+        <ul>
+          <li>Type of traders</li>
+          <li>Trading Mindset</li>
+          <li>How to Keep Ego away</li>
+          <li><b class="highlight-management">Money Management</b></li>
+          <li><b class="highlight-management">Mind Management</b></li>
+          <li><b class="highlight-management">Psychology Management</b></li>
+          <li><b class="highlight-management">Time Management</b></li>
+        </ul>
+      </div>
+      <div class="module">
+        <h3>💡 Investment & Wealth</h3>
+        <ul>
+          <li>What is Stock and what is Mutual fund</li>
+          <li>SIP Calculator</li>
+          <li>EPF Calculator</li>
+          <li>Why your hard earned money is important?</li>
+          <li>How to start your investment career?</li>
+          <li>How investing will make you rich?</li>
+          <li>How to buy stocks?</li>
+        </ul>
+      </div>
+      <div class="module">
+        <h3>⚡ Trading & Strategies</h3>
+        <ul>
+          <li>Stock Weightage</li>
+          <li>How to select stock and mutual funds</li>
+          <li>What to choose between trading and investing</li>
+          <li>Type of candles</li>
+          <li>How trading will make you rich?</li>
+          <li>How to avoid FOMO?</li>
+          <li>When to book a loss?</li>
+        </ul>
+      </div>
+      <div class="module">
+        <h3>📝 F&O & Advanced</h3>
+        <ul>
+          <li>When to book a profit?</li>
+          <li>Prediction of market</li>
+          <li>How to go with market direction</li>
+          <li>When to avoid market</li>
+          <li>When to trade aggressively</li>
+          <li>How Pro level traders trade</li>
+          <li><b class="highlight-strategy">5+ strategies with accuracy more than 85%</b></li>
+        </ul>
+      </div>
+      <div class="module">
+        <h3>📝 F&O & Advanced II</h3>
+        <ul>
+          <li>What is BankNifty?</li>
+          <li>What is index and equity?</li>
+          <li><b class="highlight-fno">FNO Rules and strategies</b></li>
+          <li>Believe in your strategy</li>
+          <li>How to Keep Ego away</li>
+          <li>Trading Mindset</li>
+          <li>Type of traders</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
     <section id="contact">
         <h2 class="section-title">Contact Us</h2>
@@ -156,5 +233,40 @@
         </div>
         &copy; Sarada Trading. All rights reserved.
     </footer>
+
+    <!-- AI Message Logo Popup (single implementation, auto popup after 5s) -->
+    <div id="ai-message-btn" style="position:fixed;bottom:32px;right:32px;z-index:9999;cursor:pointer;width:60px;height:60px;background:rgba(24,32,54,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.18);transition:box-shadow 0.2s;">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="AI Message" style="width:36px;height:36px;filter:drop-shadow(0 2px 6px #000);">
+    </div>
+    <div id="ai-message-popup" class="ai-message-popup">
+      <span>Struggling in stock market? Click here to contact me</span>
+    </div>
+    <script>
+      const aiMsgBtn = document.getElementById('ai-message-btn');
+      const aiMsgPopup = document.getElementById('ai-message-popup');
+      let aiMsgPopupOpen = false;
+      // Show popup after 5 seconds automatically
+      setTimeout(function() {
+        aiMsgPopup.style.display = 'block';
+        aiMsgPopupOpen = true;
+      }, 5000);
+      aiMsgBtn.addEventListener('click', function(e) {
+        aiMsgPopup.style.display = 'block';
+        aiMsgPopupOpen = true;
+        e.stopPropagation();
+      });
+      aiMsgPopup.addEventListener('click', function(e) {
+        window.open('http://bit.ly/wp97763', '_blank');
+        aiMsgPopup.style.display = 'none';
+        aiMsgPopupOpen = false;
+        e.stopPropagation();
+      });
+      document.addEventListener('click', function(e) {
+        if (aiMsgPopupOpen && !aiMsgPopup.contains(e.target) && e.target !== aiMsgBtn) {
+          aiMsgPopup.style.display = 'none';
+          aiMsgPopupOpen = false;
+        }
+      });
+    </script>
 </body>
 </html>
