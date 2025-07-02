@@ -189,7 +189,7 @@ const advancedModules: Module[] = [
 ];
 
 const CourseModules: React.FC = () => {
-  const renderModule = (module: Module, index: number, isAdvanced = false) => (
+  const renderModule = (module: Module, index: number) => (
     <motion.div
       key={module.id}
       className="card-glass p-6 hover:shadow-2xl transition-all duration-300 group"
@@ -279,7 +279,7 @@ const CourseModules: React.FC = () => {
 
         {/* Advanced Modules Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {advancedModules.map((module, index) => renderModule(module, index, true))}
+          {advancedModules.map((module, index) => renderModule(module, index))}
         </div>
       </div>
     </section>
